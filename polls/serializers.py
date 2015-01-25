@@ -14,3 +14,5 @@ class PollResultsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = ('question_text', 'pub_date', 'tracks')
+
+

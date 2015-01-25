@@ -16,7 +16,6 @@ class QuestionList(generics.ListCreateAPIView):
     serializer_class = QuestionSerializer
 
 
-
 class PollResultsList(generics.ListCreateAPIView):
     queryset = Question.objects.all()
     serializer_class =  PollResultsSerializer
