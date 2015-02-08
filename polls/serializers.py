@@ -16,3 +16,15 @@ class PollResultsSerializer(serializers.ModelSerializer):
         fields = ('question_text', 'pub_date', 'tracks')
 
 
+class CSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Choice
+        fields = ('id', 'choice_text','votes','question')
+
+class QSerializer(serializers.ModelSerializer):
+    tracks = CSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Question
+        fields = ('question_text', 'pub_date', 'tracks')
+

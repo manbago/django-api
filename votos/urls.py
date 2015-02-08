@@ -32,6 +32,12 @@ urlpatterns = [
     url(r'^questions/$', views.QuestionList.as_view()),
     url(r'^questions/(?P<pk>[0-9]+)/$', views.QuestionDetail.as_view()),
     url(r'^todo/$', views.PollResultsList.as_view()),
-     
+    url(r'^choices/$', views.ChoiceList.as_view()),
+    url(r'^all/$', views.AllList.as_view()),
+
+    url(r'^index/$', views.IndexView.as_view(), name='index'),
+    url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name="detail"),
+    url(r'^(?P<pk>\d+)/results/$', views.ResultsView.as_view(), name='results'),
+    url(r'^(?P<question_id>\d+)/vote/$', views.vote, name='vote'),
 ]
     
